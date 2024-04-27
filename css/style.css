@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200..800&display=swap');
+
+/* RESET do CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Gemunu Libre", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+header {
+    width: 100%;
+    height: 64px;
+    background-color: #00AAC1;
+}
+
+header nav {
+    width: 1280px;
+    height: 64px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {}
+
+menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+
+menu a {
+    font-size: 24px;
+    font-family: "Gemunu Libre", sans-serif;
+    transition: 0.5s;
+}
+
+menu a:link,
+menu a:visited {
+    color: #212121;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+menu a:hover {
+    color: #fafafa;
+}
+
+.barra-cinza {
+    width: 100%;
+    height: 24px;
+    background-color: #b0b0b0;
+}
+
+main {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.banner {
+    width: 100%;
+    height: 340px;
+    position: relative;
+}
+
+.banner h1 {
+    width: fit-content;
+    position: relative;
+    top: -190px;
+    left: 100px;
+    color: #fafafa;
+    font-size: 40px;
+}
+
+.serv,
+.prod,
+.cards {
+    width: 100%;
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.card {
+    width: 416px;
+    height: 205px;
+    background-color: #fafafa;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 8px #21212140;
+}
+
+.card img {
+    width: 64px;
+}
+
+.card h2 {
+    font-size: 60px;
+}
+
+.serv,
+.prod {
+    height: 600px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+}
+
+.serv h1,
+.prod h1 {
+    font-size: 60px;
+}
+
+.prod-tipos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+}
+
+.prod-tipos .card {
+    width: 540px;
+    height: 280px;
+    overflow: hidden;
+}
+
+.prod-tipos .card img {
+    width: 100%;
+}
+
+.prod-det {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.prod-foto {
+    width: 740px;
+    height: 380px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 8px #21212140;
+    overflow: hidden;
+}
+
+.prod-foto img {
+    width: 100%;
+}
+
+.prod-info {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.prod-info h2 {
+    font-size: 40px;
+}
+
+.prod-info h3 {
+    font-size: 26px;
+}
+
+.prod-info ul {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+.prod-info ul li {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    list-style-type: none;
+}
+
+.carro ul li:nth-child(1) {
+    background-color: #D9CF25;
+}
+
+.carro ul li:nth-child(2) {
+    background-color: #EC850D;
+}
+
+.carro ul li:nth-child(3) {
+    background-color: #969696;
+}
+
+.carro ul li:nth-child(4) {
+    background-color: #D3303A;
+}
+
+.pickup ul li:nth-child(1) {
+    background-color: #5446A0;
+}
+
+.pickup ul li:nth-child(2) {
+    background-color: #C9C9C9;
+}
+
+.pickup ul li:nth-child(3) {
+    background-color: #B035A9;
+}
+
+.pickup ul li:nth-child(4) {
+    background-color: #9F454F;
+}
+
+.prod-info a {
+    width: 100%;
+    height: 70px;
+    font-family: "Gemunu Libre", sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.prod-info a:link,
+.prod-info a:visited {
+    background: #d9d9d9;
+    color: #212121;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.prod-info a:hover {
+    background: #00aac1;
+    color: #fafafa;
+}
+
+.prod-info a:active {}
+
+.circulos {
+    display: flex;
+    gap: 80px;
+}
+
+.circulo {
+    width: 305px;
+    height: 305px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.circulo h2 {
+    position: relative;
+    bottom: 80px;
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    height: 48px;
+    background-color: #b0b0b0;
+    color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gemunu Libre", sans-serif;
+    font-size: 16px;
+}
