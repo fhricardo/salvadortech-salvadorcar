@@ -1,10 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200..800&display=swap');
 
+
 /* RESET do CSS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* VARIÁVEIS CSS */
+
+:root {
+    --blue: #00AAC1;
+    --white: #fafafa;
+    --black: #212121;
+    --gray: #d9d9d9;
+    --largura: 1280px;
+    --myFont: "Gemunu Libre", sans-serif;
 }
 
 h1,
@@ -13,19 +25,23 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Gemunu Libre", sans-serif;
+    font-family: var(--myFont);
     font-optical-sizing: auto;
     font-style: normal;
 }
 
+a {
+    transition: 0.5s;
+}
+
 header {
     width: 100%;
-    height: 64px;
-    background-color: #00AAC1;
+    height: 88px;
+    background-color: var(--blue);
 }
 
 header nav {
-    width: 1280px;
+    width: var(--largura);
     height: 64px;
     margin: 0 auto;
     display: flex;
@@ -33,7 +49,18 @@ header nav {
     align-items: center;
 }
 
-.logo {}
+header nav .toggle-menu {
+    display: none;
+}
+
+.logo {
+    width: 258px;
+    height: 42px;
+}
+
+.logo img {
+    width: 100%;
+}
 
 menu {
     display: flex;
@@ -44,29 +71,78 @@ menu {
 
 menu a {
     font-size: 24px;
-    font-family: "Gemunu Libre", sans-serif;
-    transition: 0.5s;
+    font-family: var(--myFont);
 }
 
 menu a:link,
 menu a:visited {
-    color: #212121;
+    color: var(--black);
     text-decoration: none;
     font-weight: 600;
 }
 
 menu a:hover {
-    color: #fafafa;
+    color: var(--white);
 }
 
-.barra-cinza {
+menu .social a {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.breadcrumb {
     width: 100%;
     height: 24px;
     background-color: #b0b0b0;
 }
 
+.breadcrumb nav {
+    width: var(--largura);
+    height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb nav ul {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb nav ul li {
+    list-style-type: none;
+    font-family: var(--myFont);
+    font-weight: bold;
+    color: var(--black);
+}
+
+.breadcrumb nav ul li a {
+    text-decoration: none;
+}
+
+.breadcrumb nav ul li a::after {
+    font: var(--fa-font-solid);
+    content: '\f0da';
+    display: inline-block;
+    line-height: 24px;
+    margin-left: 8px;
+}
+
+/* f0da => CARET */
+.breadcrumb nav ul li a:link,
+.breadcrumb nav ul li a:visited {
+    color: var(--black);
+}
+
+.breadcrumb nav ul li a:hover {
+    color: var(--white);
+}
+
 main {
-    width: 1280px;
+    width: var(--largura);
     margin: 0 auto;
 }
 
@@ -87,32 +163,13 @@ main {
 
 .serv,
 .prod,
-.cards {
+.cards,
+.contato {
     width: 100%;
     margin: 16px 0;
     display: flex;
     justify-content: space-between;
     gap: 16px;
-}
-
-.card {
-    width: 416px;
-    height: 205px;
-    background-color: #fafafa;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 8px #21212140;
-}
-
-.card img {
-    width: 64px;
-}
-
-.card h2 {
-    font-size: 60px;
 }
 
 .serv,
@@ -124,8 +181,67 @@ main {
     gap: 48px;
 }
 
+.card {
+    width: 416px;
+    height: 205px;
+    background-color: var(--white);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 8px #21212140;
+    gap: 8px;
+}
+
+.card img {
+    width: 64px;
+}
+
+.card h2 {
+    font-size: 60px;
+    color: var(--blue);
+}
+
+.card a.btn {
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--myFont);
+    text-decoration: none;
+}
+
+.card a.btn:link,
+.card a.btn:visited {
+    color: var(--black);
+}
+
+.card a.btn:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.card a img {
+    /* filter: grayscale(100%); */
+    filter: saturate(0%);
+    transition: .5s;
+    /* Quando o valor for em %, podemos utilizar de 0% a 100% ou de 0 a 1 0.25 */
+}
+
+.card a:hover img {
+    filter: saturate(100%);
+    transition: .5s;
+}
+
 .serv h1,
-.prod h1 {
+.prod h1,
+.contato h1 {
     font-size: 60px;
 }
 
@@ -168,6 +284,12 @@ main {
 
 .prod-info {
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.prod-info div {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -229,7 +351,7 @@ main {
 .prod-info a {
     width: 100%;
     height: 70px;
-    font-family: "Gemunu Libre", sans-serif;
+    font-family: var(--myFont);
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -240,15 +362,15 @@ main {
 .prod-info a:link,
 .prod-info a:visited {
     background: #d9d9d9;
-    color: #212121;
+    color: var(--black);
     font-size: 20px;
     text-decoration: none;
     border-radius: 8px;
 }
 
 .prod-info a:hover {
-    background: #00aac1;
-    color: #fafafa;
+    background: var(--blue);
+    color: var(--white);
 }
 
 .prod-info a:active {}
@@ -264,22 +386,805 @@ main {
     border-radius: 50%;
     overflow: hidden;
     position: relative;
+    box-shadow: 0px 0px 8px var(--black);
+    transition: 0.5s;
 }
 
-.circulo h2 {
+.circulo a h2 {
     position: relative;
-    bottom: 80px;
+    bottom: 100px;
     text-align: center;
+    font-size: 42px;
+    text-transform: lowercase;
+}
+
+.circulo a {
+    text-decoration: none;
+    text-shadow: 0px 0px 8px var(--black);
+}
+
+.circulo a:link,
+.circulo a:visited {
+    color: var(--white);
+}
+
+.circulo a:link img,
+.circulo a:visited img {
+    filter: grayscale(1);
+    transition: 0.5s;
+}
+
+.circulo:hover {
+    box-shadow: 0px 0px 16px var(--black);
+    transition: 0.5s;
+}
+
+.circulo a:hover {
+    color: var(--blue);
+}
+
+.circulo a:hover img {
+    filter: grayscale(0);
+    transition: 0.5s;
+}
+
+.servico {
+    width: var(--largura);
+    height: 580px;
+    padding: 30px 108px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    gap: 52px;
+}
+
+.trocaOleo {
+    background-image: url(../assets/s-troca-oleo.webp);
+}
+
+.revisao {
+    background-image: url(../assets/s-revisao.webp);
+}
+
+.manutencao {
+    background-image: url(../assets/s-manutencao.webp);
+}
+
+.servico h1 {
+    width: 420px;
+    font-size: 60px;
+    color: var(--white);
+    text-shadow: 0px 0px 8px #21212180;
+}
+
+.servico .texto {
+    width: 420px;
+    overflow: auto;
+}
+
+.servico p {
+
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-family: var(--myFont);
+}
+
+.servico a.btn-agenda {
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--myFont);
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+.servico a.btn-agenda:link,
+.servico a.btn-agenda:visited {
+    color: var(--black);
+}
+
+.servico a.btn-agenda:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.contato {
+    flex-wrap: wrap;
+}
+
+.contato h1 {
+    width: 100%;
+}
+
+.contato .dados {
+    width: 522px;
+    height: 300px;
+    padding-top: 32px;
+    padding-left: 64px;
+}
+
+.contato .dados h4 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.contato .dados p {
+    font-size: 20px;
+    font-family: var(--myFont);
+    margin-bottom: 8px;
+}
+
+.contato .dados p a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.contato .dados p a:hover {
+    color: var(--black);
+}
+
+.contato .formulario {
+    width: 738px;
+    height: 300px;
+    padding-top: 32px;
+}
+
+.contato .formulario form {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.contato .formulario form .formL,
+.contato .formulario form .formR {
+    width: 361px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contato .formulario form .formL input[type="text"],
+.contato .formulario form .formL input[type="email"],
+.contato .formulario form .formL input[type="tel"] {
+    height: 32px;
+    padding: 4px 8px;
+    font-size: 16px;
+    background-color: var(--gray);
+    border: none;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 8px var(--blue);
+    }
+}
+
+.contato .formulario form .formR textarea {
+    height: 128px;
+    padding: 4px 8px;
+    font-size: 16px;
+    background-color: var(--gray);
+    border: none;
+    resize: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 8px var(--blue);
+    }
+}
+
+.contato .formulario form .formR input[type="submit"] {
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9d9d9;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--myFont);
+    text-decoration: none;
+    align-self: flex-end;
+    border: none;
+    transition: .5s;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 8px var(--blue);
+    }
+}
+
+.contato .formulario form .formR input[type="submit"]:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.contato .mapa {
+    width: 100%;
+    height: 250px;
+    background-color: gray;
+}
+
+.contato .mapa iframe {
+    width: var(--largura);
+    height: 250px;
 }
 
 footer {
     width: 100%;
-    height: 48px;
+    height: 64px;
     background-color: #b0b0b0;
     color: #212121;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Gemunu Libre", sans-serif;
+    flex-direction: column;
+    font-family: var(--myFont);
     font-size: 16px;
+    gap: 8px;
+}
+
+footer .social {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+footer .social a {
+    color: var(--black);
+}
+
+footer .social a:hover {
+    color: var(--white);
+}
+
+/* Visualização para Desktop pequeno (notebooks) */
+@media(max-width: 1024px) {
+    :root {
+        --largura: 960px;
+    }
+
+    header nav {
+        width: var(--largura);
+    }
+
+    menu {
+        gap: 16px;
+    }
+
+    .breadcrumb nav {
+        width: var(--largura);
+    }
+
+    main {
+        width: var(--largura);
+    }
+
+    .banner {
+        height: 255px;
+        overflow: hidden;
+    }
+
+    .banner img {
+        width: 100%;
+
+    }
+
+    section.cards {
+        gap: 18px;
+    }
+
+    .card {
+        width: 308px;
+    }
+
+    .card img {
+        width: 54px;
+    }
+
+    .card h2 {
+        font-size: 48px;
+    }
+
+    .prod-tipos {
+        gap: 32px;
+    }
+
+    .prod-tipos .card {
+        width: 464px;
+        height: 240px;
+        overflow: hidden;
+    }
+
+    .circulos {
+        gap: 32px;
+    }
+
+    .circulo {
+        width: 298px;
+        height: 298px;
+    }
+
+    .contato .dados {
+        width: 472px;
+    }
+
+    .contato .formulario {
+        width: 472px;
+    }
+
+    .prod-foto {
+        width: 660px;
+        height: 340px;
+    }
+
+    .prod-info {
+        width: 280px;
+    }
+
+    .servico {
+        width: var(--largura);
+        padding: 32px 16px 16px 32px;
+        gap: 32px;
+    }
+
+    /* Editar imagens para responsividade 1024px */
+    .trocaOleo {
+        background-image: url(../assets/s-troca-oleo.webp);
+    }
+
+    .revisao {
+        background-image: url(../assets/s-revisao.webp);
+    }
+
+    .manutencao {
+        background-image: url(../assets/s-manutencao.webp);
+    }
+}
+
+/* Visualização para Tablet */
+@media(max-width: 768px) {
+    :root {
+        --largura: 720px;
+    }
+
+    header nav {
+        width: var(--largura);
+        height: 64px;
+        position: relative;
+        z-index: 2;
+    }
+
+    header nav .toggle-menu {
+        display: flex;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    header nav .toggle-menu:hover {
+        color: var(--white);
+        transition: 0.5s;
+    }
+
+    .logo {
+        width: 196px;
+        height: 32px;
+        order: 2;
+        position: relative;
+        margin-left: 120px;
+    }
+
+    menu {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        top: 64px;
+        width: 120px;
+        height: 160px;
+        gap: 8px;
+        order: 1;
+        flex-direction: column;
+        background-color: var(--blue);
+    }
+
+    menu a:link {}
+
+    menu .social {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        order: 3;
+        height: 64px;
+        top: 0;
+        gap: 16px;
+    }
+
+    menu .social a {
+        width: 24px;
+        height: 24px;
+    }
+
+    .breadcrumb nav {
+        width: var(--largura);
+    }
+
+    main {
+        width: var(--largura);
+    }
+
+    .banner {
+        height: 255px;
+        overflow: hidden;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+
+    section.cards {
+        gap: 18px;
+    }
+
+    .card {
+        width: 228px;
+    }
+
+    .card img {
+        width: 48px;
+    }
+
+    .card h2 {
+        font-size: 40px;
+    }
+
+    .prod,
+    .serv {
+        height: auto;
+    }
+
+    .prod-tipos {
+        gap: 32px;
+        flex-direction: column;
+        margin: 32px 0;
+    }
+
+    .prod-tipos .card {
+        width: 464px;
+        height: 240px;
+        overflow: hidden;
+    }
+
+    .circulos {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0px 42px;
+    }
+
+    .circulo {
+        width: 298px;
+        height: 298px;
+    }
+
+    .contato {
+        justify-content: center;
+        gap: 32px;
+    }
+
+    .contato .dados {
+        width: 520px;
+        height: auto;
+    }
+
+    .contato .formulario {
+        width: 520px;
+        height: auto;
+    }
+
+    .prod h1 {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .prod-det {
+        flex-direction: column;
+    }
+
+    .prod-foto {
+        width: 520px;
+        height: auto;
+    }
+
+    .prod-info {
+        width: 520px;
+        justify-content: center;
+    }
+
+    .prod-info div {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .prod-info div ul {
+        justify-content: center;
+    }
+
+    .prod-info a {
+        width: 300px;
+    }
+
+    .servico {
+        width: var(--largura);
+        height: auto;
+        padding: 32px 16px 16px 32px;
+        gap: 96px 32px;
+        flex-wrap: wrap;
+    }
+
+    .servico h1 {
+        width: 420px;
+    }
+
+    .servico a.btn-agenda {
+        width: 120px;
+    }
+
+    .servico .texto {
+        width: 520px;
+        overflow: none;
+    }
+
+    /* Editar imagens para responsividade 768px */
+    .trocaOleo {
+        background-image: url(../assets/s-troca-oleo.webp);
+    }
+
+    .revisao {
+        background-image: url(../assets/s-revisao.webp);
+    }
+
+    .manutencao {
+        background-image: url(../assets/s-manutencao.webp);
+    }
+
+    footer .social {
+        display: flex;
+    }
+}
+
+/* Visualização para SmartPhone (mobile) */
+@media(max-width: 425px) {
+    :root {
+        --largura: 100%;
+    }
+
+    header nav {
+        width: var(--largura);
+        height: 64px;
+        padding: 0 16px;
+        position: relative;
+        z-index: 2;
+    }
+
+    header nav .toggle-menu {
+        display: flex;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    header nav .toggle-menu:hover {
+        color: var(--white);
+        transition: 0.5s;
+    }
+
+    .logo {
+        width: 196px;
+        height: 32px;
+        order: 2;
+        position: relative;
+        margin-left: 120px;
+    }
+
+    menu {
+        display: none;
+        position: absolute;
+        z-index: 20;
+        top: 64px;
+        width: 120px;
+        height: 160px;
+        gap: 8px;
+        order: 1;
+        flex-direction: column;
+        background-color: var(--blue);
+    }
+
+    menu a:link {}
+
+    menu .social {
+        display: none;
+        flex-direction: row;
+        position: relative;
+        order: 3;
+        height: 64px;
+        top: 0;
+        gap: 16px;
+    }
+
+    menu .social a {
+        width: 24px;
+        height: 24px;
+    }
+
+    .breadcrumb nav {
+        width: var(--largura);
+    }
+
+    main {
+        width: var(--largura);
+    }
+
+    .banner {
+        height: 255px;
+        overflow: hidden;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+
+    section.cards {
+        gap: 18px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .card img {
+        width: 48px;
+    }
+
+    .card h2 {
+        font-size: 40px;
+    }
+
+    .prod,
+    .serv {
+        height: auto;
+    }
+
+    .prod-tipos {
+        gap: 32px;
+        flex-direction: column;
+        margin: 32px 0;
+    }
+
+    .prod-tipos .card {
+        width: 464px;
+        height: 240px;
+        overflow: hidden;
+    }
+
+    .circulos {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    .circulo {
+        width: 298px;
+        height: 298px;
+    }
+
+    .contato {
+        justify-content: center;
+        gap: 32px;
+    }
+
+    .contato h1 {
+        font-size: 48px;
+        padding: 0 16px;
+    }
+
+    .contato .dados {
+        width: 90%;
+        height: auto;
+        padding-top: 16px;
+        padding-left: 0;
+
+    }
+
+    .contato .formulario {
+        width: 95%;
+        height: auto;
+    }
+
+    .contato .formulario form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contato .formulario form .formL,
+    .contato .formulario form .formR {
+        width: 95%;
+    }
+
+    .prod h1 {
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .prod-det {
+        flex-direction: column;
+    }
+
+    .prod-foto {
+        width: 520px;
+        height: auto;
+    }
+
+    .prod-info {
+        width: 520px;
+        justify-content: center;
+    }
+
+    .prod-info div {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .prod-info div ul {
+        justify-content: center;
+    }
+
+    .prod-info a {
+        width: 300px;
+    }
+
+    .servico {
+        width: var(--largura);
+        height: auto;
+        padding: 32px 16px 16px 32px;
+        gap: 96px 32px;
+        flex-wrap: wrap;
+    }
+
+    .servico h1 {
+        width: 420px;
+    }
+
+    .servico a.btn-agenda {
+        width: 120px;
+    }
+
+    .servico .texto {
+        width: 520px;
+        overflow: none;
+    }
+
+    /* Editar imagens para responsividade 768px */
+    .trocaOleo {
+        background-image: url(../assets/s-troca-oleo.webp);
+    }
+
+    .revisao {
+        background-image: url(../assets/s-revisao.webp);
+    }
+
+    .manutencao {
+        background-image: url(../assets/s-manutencao.webp);
+    }
 }

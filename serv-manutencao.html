@@ -4,36 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#00AAC1">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#00AAC1">
+
     <title>SalvadorCar | Seu carro novo está aqui</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/d333ca2c00.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- Cabeçalho da Página Web -->
     <header>
         <nav>
+            <div class="toggle-menu" onclick="toggleMenu('open')">
+                <i class="fa-solid fa-bars fa-2xl"></i>
+            </div>
             <div class="logo">
                 <a href="index.html"><img src="assets/SalvadorCar.svg" alt=""></a>
             </div>
-            <menu>
+            <menu id="menu">
                 <a href="index.html">Início</a>
                 <a href="produtos.html">Produtos</a>
                 <a href="servicos.html">Serviços</a>
                 <a href="contato.html">Contato</a>
             </menu>
             <menu class="social">
-                <a href="#">Instagram</a>
-                <a href="#">X Twitter</a>
-                <a href="#">YouTube</a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
             </menu>
         </nav>
+        <div class="breadcrumb">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li>Manutenção</li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <!-- Conteúdo Principal do Site -->
     <main>
+        <section class="servico manutencao">
 
+            <h1>Manutenção</h1>
+            <a href="#" class="btn-agenda">Agendar</a>
+            <div class="texto">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam adipisci omnis eos obcaecati optio
+                    culpa aspernatur doloribus? Ducimus pariatur at culpa totam earum est aspernatur sit doloremque amet
+                    nulla vero, quia rem tempore deserunt rerum dignissimos soluta alias sapiente nesciunt magni enim
+                    quam quo et eveniet. Ad reiciendis nam cupiditate unde quaerat doloribus! Fuga! Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Dicta impedit numquam dolorum. Fuga aperiam perferendis error
+                    laborum non in rerum.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam adipisci omnis eos obcaecati optio
+                    culpa aspernatur doloribus? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas
+                    quidem illo exercitationem. Perferendis accusamus, quaerat explicabo totam voluptatibus provident ut
+                    neque ipsam voluptates aspernatur similique. Ducimus pariatur at culpa totam earum est aspernatur
+                    sit doloremque amet
+                    nulla vero, quia rem tempore deserunt rerum dignissimos soluta alias sapiente nesciunt magni enim
+                    quam quo et eveniet. Ad reiciendis nam cupiditate unde quaerat doloribus! Fuga!</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam adipisci omnis eos obcaecati optio
+                    culpa aspernatur doloribus? Ducimus pariatur at culpa totam earum est aspernatur sit doloremque amet
+                    nulla vero, quia rem tempore deserunt rerum dignissimos soluta alias sapiente nesciunt magni enim
+                    quam quo et eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus consequatur
+                    aliquam saepe labore cumque enim est maxime molestias non! Ad reiciendis nam cupiditate unde quaerat
+                    doloribus! Fuga!</p>
+            </div>
+        </section>
     </main>
     <!-- Rodapé do Site -->
     <footer>
+        <ul class="social">
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </ul>
         <p>&copy;2024. SalvadorCar. Todos os Direitos Reservados.</p>
     </footer>
 </body>

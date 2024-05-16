@@ -4,38 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#00AAC1">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#00AAC1">
+
     <title>SalvadorCar | Seu carro novo está aqui</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/d333ca2c00.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <!-- Cabeçalho da Página Web -->
     <header>
         <nav>
+            <div class="toggle-menu" onclick="toggleMenu('open')">
+                <i class="fa-solid fa-bars fa-2xl"></i>
+            </div>
             <div class="logo">
                 <a href="index.html"><img src="assets/SalvadorCar.svg" alt=""></a>
             </div>
-            <menu>
+            <menu id="menu">
                 <a href="index.html">Início</a>
                 <a href="produtos.html">Produtos</a>
                 <a href="servicos.html">Serviços</a>
                 <a href="contato.html">Contato</a>
             </menu>
             <menu class="social">
-                <a href="#">Instagram</a>
-                <a href="#">X Twitter</a>
-                <a href="#">YouTube</a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
             </menu>
         </nav>
+        <div class="breadcrumb">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li>Contato</li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <!-- Conteúdo Principal do Site -->
     <main>
         <section class="contato">
             <h1>Contato</h1>
+            <div class="dados">
+                <h4>Entre em contato conosco</h4>
+                <p>E-mail: <a href="mailto:email@salvadorcar.com.br">email@salvadorcar.com.br</a></p>
+
+                <p>Telefone: <a href="tel:+557199999999"> +55 71 9999 9999</a></p>
+                <p>Endereço: <a href="https://maps.app.goo.gl/SgxN9iWbj78EGDpi9" target="_blank">Endereço completo,
+                        incluindo CEP</a></p>
+
+            </div>
+            <div class="formulario">
+                <form action="" method="get">
+                    <div class="formL">
+                        <input type="text" name="Nome" id="Nome" placeholder="Nome Completo">
+                        <input type="email" name="Email" id="Email" placeholder="E-mail">
+                        <input type="tel" name="Tel" id="Tel" placeholder="Telefone para contato">
+                    </div>
+                    <div class="formR">
+                        <textarea name="msg" id="msg" placeholder="Digite sua mensagem aqui..."></textarea>
+                        <input type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+            <div class="mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.543710319642!2d-38.459896199999996!3d-13.001010200000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7161b68a1bd0947%3A0xf98e09f5d59b0466!2sED.%20Multimedia%20-%20R.%20Rio%20Grande%20do%20Sul%2C%20635%20-%20Pituba%2C%20Salvador%20-%20BA%2C%2041830-141!5e0!3m2!1spt-BR!2sbr!4v1714782178959!5m2!1spt-BR!2sbr"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </section>
     </main>
     <!-- Rodapé do Site -->
     <footer>
+        <ul class="social">
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </ul>
         <p>&copy;2024. SalvadorCar. Todos os Direitos Reservados.</p>
     </footer>
 </body>
