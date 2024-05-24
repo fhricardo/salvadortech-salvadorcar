@@ -314,6 +314,13 @@ main {
     height: 48px;
     border-radius: 50%;
     list-style-type: none;
+    filter: brightness(75%);
+    transition: .5s;
+}
+
+.prod-info ul li:hover {
+    cursor: pointer;
+    filter: brightness(100%);
 }
 
 .carro ul li:nth-child(1) {

@@ -26,6 +26,7 @@
     <title>SalvadorCar | Seu carro novo está aqui</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/d333ca2c00.js" crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -72,7 +73,7 @@
             <h1>O hatchback mais confortável da categoria</h1>
             <div class="prod-det">
                 <div class="prod-foto">
-                    <img src="assets/carro-prata.webp" alt="">
+                    <img src="assets/carro-amarelo.webp" alt="" id="foto" title="Descritivo da foto">
                 </div>
                 <div class="prod-info carro">
                     <div>
@@ -81,10 +82,10 @@
                     <div>
                         <h3>Disponível na cores:</h3>
                         <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li onclick="trocaFoto('carro-amarelo')"></li>
+                            <li onclick="trocaFoto('carro-dourado')"></li>
+                            <li onclick="trocaFoto('carro-prata')"></li>
+                            <li onclick="trocaFoto('carro-vermelho')"></li>
                         </ul>
                         <a href="#">Comprar</a>
                     </div>
