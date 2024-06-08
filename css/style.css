@@ -49,7 +49,7 @@ header nav {
     align-items: center;
 }
 
-header nav .toggle-menu {
+button {
     display: none;
 }
 
@@ -64,9 +64,19 @@ header nav .toggle-menu {
 
 menu {
     display: flex;
-    justify-content: center;
+    width: 760px;
+    height: 64px;
+    justify-content: space-between;
     align-items: center;
     gap: 36px;
+}
+
+.main-menu,
+.social-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
 }
 
 menu a {
@@ -85,18 +95,20 @@ menu a:hover {
     color: var(--white);
 }
 
-menu .social a {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.oculta {
+    left: -200px;
+}
+
+.mostra {
+    left: 0px;
 }
 
 .breadcrumb {
     width: 100%;
     height: 24px;
     background-color: #b0b0b0;
+    position: relative;
+    z-index: 0;
 }
 
 .breadcrumb nav {
@@ -655,6 +667,11 @@ footer .social a:hover {
     color: var(--white);
 }
 
+.fixed-bottom {
+    position: fixed;
+    bottom: 0px;
+}
+
 /* Visualização para Desktop pequeno (notebooks) */
 @media(max-width: 1024px) {
     :root {
@@ -666,6 +683,10 @@ footer .social a:hover {
     }
 
     menu {
+        width: 600px;
+    }
+
+    .main-menu {
         gap: 16px;
     }
 
@@ -772,10 +793,37 @@ footer .social a:hover {
         z-index: 2;
     }
 
-    header nav .toggle-menu {
-        display: flex;
+    button {
+        display: block;
+        width: 36px;
+        height: 36px;
+        background-color: transparent;
+        border: none;
         cursor: pointer;
-        transition: 0.5s;
+    }
+
+    button.active .line:nth-child(1) {
+        transform: translateY(10px) rotate(-45deg);
+    }
+
+    button.active .line:nth-child(3) {
+        transform: translateY(-10px) rotate(45deg);
+    }
+
+    button.active .line:nth-child(2) {
+        width: 0;
+    }
+
+    .line {
+        width: 36px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: var(--black);
+        display: block;
+        margin: 6px auto;
+        position: relative;
+        transform-origin: center;
+        transition: .5s;
     }
 
     header nav .toggle-menu:hover {
@@ -792,34 +840,34 @@ footer .social a:hover {
     }
 
     menu {
-        display: none;
+        display: flex;
+        gap: 12px;
         position: absolute;
-        z-index: 20;
         top: 64px;
-        width: 120px;
-        height: 160px;
-        gap: 8px;
+        width: 160px;
+        height: 220px;
+        padding: 8px 0;
         order: 1;
         flex-direction: column;
         background-color: var(--blue);
+        transition: .5s;
+        z-index: 100;
     }
 
-    menu a:link {}
+    .mostra {
+        left: -24px;
+    }
 
-    menu .social {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        order: 3;
-        height: 64px;
-        top: 0;
+    .main-menu {
+        flex-direction: column;
         gap: 16px;
     }
 
-    menu .social a {
-        width: 24px;
-        height: 24px;
+    .social-menu {
+        gap: 16px;
     }
+
+    menu a:link {}
 
     .breadcrumb nav {
         width: var(--largura);
@@ -983,36 +1031,8 @@ footer .social a:hover {
         z-index: 2;
     }
 
-    header nav .toggle-menu {
-        display: flex;
-        cursor: pointer;
-        transition: 0.5s;
-    }
-
-    header nav .toggle-menu:hover {
-        color: var(--white);
-        transition: 0.5s;
-    }
-
-    .logo {
-        width: 196px;
-        height: 32px;
-        order: 2;
-        position: relative;
-        margin-left: 120px;
-    }
-
-    menu {
-        display: none;
-        position: absolute;
-        z-index: 20;
-        top: 64px;
-        width: 120px;
-        height: 160px;
-        gap: 8px;
-        order: 1;
-        flex-direction: column;
-        background-color: var(--blue);
+    .mostra {
+        left: 0px;
     }
 
     menu a:link {}
@@ -1041,7 +1061,8 @@ footer .social a:hover {
     }
 
     .banner {
-        height: 255px;
+        width: 100%;
+        height: 160px;
         overflow: hidden;
     }
 

@@ -26,34 +26,39 @@
     <title>SalvadorCar | Seu carro novo está aqui</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/d333ca2c00.js" crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <!-- Cabeçalho da Página Web -->
     <header>
         <nav>
-            <div class="toggle-menu" onclick="toggleMenu('open')">
-                <i class="fa-solid fa-bars fa-2xl"></i>
-            </div>
+            <button id="btnMenu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
             <div class="logo">
                 <a href="index.html"><img src="assets/SalvadorCar.svg" alt=""></a>
             </div>
-            <menu id="menu">
-                <a href="index.html">Início</a>
-                <a href="produtos.html">Produtos</a>
-                <a href="servicos.html">Serviços</a>
-                <a href="contato.html">Contato</a>
-            </menu>
-            <menu class="social">
-                <a href="#">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
+            <menu id="mainMenu" class="oculta">
+                <div class="main-menu">
+                    <a href="index.html">Início</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="servicos.html">Serviços</a>
+                    <a href="contato.html">Contato</a>
+                </div>
+                <div class="social-menu">
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
             </menu>
         </nav>
         <div class="breadcrumb">
